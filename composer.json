@@ -1,15 +1,22 @@
 {
     "name": "square1/laravel-realex",
-    "description": "",
+    "description": "A wrapper for shaneog/realex in Laravel",
     "authors": [
         {
             "name": "Square1 Ltd.",
             "email": "info@square1.io"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/jhmilan/realex-payments"
+        }
+    ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.2.*"
+        "illuminate/support": "4.2.*",
+        "shaneog/realex": "dev-square1"
     },
     "autoload": {
         "classmap": [
