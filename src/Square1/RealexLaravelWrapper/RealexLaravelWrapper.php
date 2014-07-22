@@ -2,8 +2,18 @@
  
 class RealexLaravelWrapper
 {
-    public static function greeting()
+    public function __construct()
     {
-        return "hey wrapper!";
+        Realex::load(['endpoint' => Config::get('realex.url'), 'userAgent' => 'laravelWrapper']);
+    }
+
+    public static function getEndpoint()
+    {
+        return Realex::getEndpoint();
+    }
+
+    public static function getUserAgent()
+    {
+        return Realex::getUserAgent();
     }
 }
