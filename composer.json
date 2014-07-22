@@ -1,0 +1,23 @@
+{
+    "name": "square1/realex-laravel-wrapper",
+    "description": "",
+    "authors": [
+        {
+            "name": "Square1 Ltd.",
+            "email": "info@square1.io"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Square1\\RealexLaravelWrapper\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
