@@ -1,5 +1,7 @@
 <?php namespace Square1\RealexLaravelWrapper;
  
+use Realex\Realex;
+
 class RealexLaravelWrapper
 {
     public function __construct()
