@@ -7,10 +7,14 @@ class RealexLaravelWrapper
     public function __construct()
     {
         Realex::load([
-            'endpoint' => \Config::get('realex.url'),
+            //mandatory: load will fail if not set
             'merchantId' => \Config::get('realex.merchant_id'),
             'secret' => \Config::get('realex.secret'),
-            'userAgent' => 'laravelWrapper'
+
+            //optional: this 3 params will be set as default
+            'endpoint' => \Config::get('realex.url'),
+            //'userAgent' => 'laravelWrapper'
+            //'hashAlgorithm' => 'sha1'
         ]);
     }
 
@@ -22,5 +26,20 @@ class RealexLaravelWrapper
     public static function getUserAgent()
     {
         return Realex::getUserAgent();
+    }
+
+    public static function getMerchantId()
+    {
+        return Realex::getMerchantId();
+    }
+
+    public static function getSecret()
+    {
+        return Realex::getSecret();
+    }
+
+    public static function getHashAlgorithm()
+    {
+        return Realex::getHashAlgorithm();
     }
 }
