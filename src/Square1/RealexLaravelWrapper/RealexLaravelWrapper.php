@@ -7,14 +7,12 @@ class RealexLaravelWrapper
     public function __construct()
     {
         Realex::load([
-            //mandatory: load will fail if not set
-            'merchantId' => \Config::get('realex.merchant_id'),
-            'secret' => \Config::get('realex.secret'),
-
-            //optional: this 3 params will be set as default
-            'endpoint' => \Config::get('realex.url'),
-            //'userAgent' => 'laravelWrapper'
-            //'hashAlgorithm' => 'sha1'
+            'merchantId'    => \Config::get('realex.merchant_id'),
+            'secret'        => \Config::get('realex.secret'),
+            'endpoint'      => \Config::get('realex.url', 'https://epage.payandshop.com/epage-remote.cgi'),
+            'userAgent'     => \Config::get('realex.userAgent', 'laravelWrapper'),
+            'hashAlgorithm' => \Config::get('realex.hashAlgorithm', 'sha1'),
+            'adapter'       => \Config::get('realex.adapter', 'curl')
         ]);
     }
 
@@ -41,5 +39,16 @@ class RealexLaravelWrapper
     public static function getHashAlgorithm()
     {
         return Realex::getHashAlgorithm();
+    }
+
+    public static function getAdapter()
+    {
+        return Realex::getAdapter();
+    }
+
+    public static function doSinglePayment($params = [])
+    {
+        //@TODO: maybe validate params
+        return Realex::doSinglePayment($params);
     }
 }
