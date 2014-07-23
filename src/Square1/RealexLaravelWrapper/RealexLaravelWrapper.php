@@ -6,7 +6,12 @@ class RealexLaravelWrapper
 {
     public function __construct()
     {
-        Realex::load(['endpoint' => \Config::get('realex.url'), 'userAgent' => 'laravelWrapper']);
+        Realex::load([
+            'endpoint' => \Config::get('realex.url'),
+            'merchantId' => \Config::get('realex.merchant_id'),
+            'secret' => \Config::get('realex.secret'),
+            'userAgent' => 'laravelWrapper'
+        ]);
     }
 
     public static function getEndpoint()
