@@ -15,9 +15,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.2.*"
-    },
-    "require-dev": {
+        "illuminate/support": "4.2.*",
         "shaneog/realex": "dev-square1"
     },
     "autoload": {
