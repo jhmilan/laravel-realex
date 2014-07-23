@@ -7,9 +7,16 @@
             "email": "info@square1.io"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://bitbucket.org/square1/realex-payments"
+        }
+    ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.2.*"
+        "illuminate/support": "4.2.*",
+        "shaneog/realex": "dev-square1"
     },
     "autoload": {
         "classmap": [
